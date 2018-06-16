@@ -1,0 +1,48 @@
+PODS:
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - MagicKit-Skygear (0.0.6)
+  - SKYKit (1.5.0):
+    - SKYKit/Core (= 1.5.0)
+    - SKYKit/ForgotPassword (= 1.5.0)
+    - SKYKit/RecordStorage (= 1.5.0)
+    - SKYKit/SSO (= 1.5.0)
+  - SKYKit/Core (1.5.0):
+    - MagicKit-Skygear (~> 0.0.6)
+    - SocketRocket (~> 0.4)
+  - SKYKit/ForgotPassword (1.5.0):
+    - SKYKit/Core
+  - SKYKit/RecordStorage (1.5.0):
+    - FMDB (~> 2.6.0)
+    - SKYKit/Core
+  - SKYKit/SSO (1.5.0):
+    - SKYKit/Core
+  - SKYKitChat (1.1.1):
+    - SKYKitChat/Core (= 1.1.1)
+  - SKYKitChat/Core (1.1.1):
+    - SKYKit/Core (~> 1.1)
+  - SocketRocket (0.5.1)
+
+DEPENDENCIES:
+  - SKYKit (~> 1.1)
+  - SKYKitChat (~> 1.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FMDB
+    - MagicKit-Skygear
+    - SKYKit
+    - SKYKitChat
+    - SocketRocket
+
+SPEC CHECKSUMS:
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  MagicKit-Skygear: ca78735168eb8ae24be2307af462e632278bced0
+  SKYKit: f1a50e43276ac9a78c43c7404406f35fadb1b467
+  SKYKitChat: 5e9bca9c09c01a8ef941ac0f5b8da81ada3d8501
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+
+PODFILE CHECKSUM: 8b20fea130e45b330d14bf13780d2a988fb46308
+
+COCOAPODS: 1.5.3
