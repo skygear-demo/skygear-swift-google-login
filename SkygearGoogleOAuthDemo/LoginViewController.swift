@@ -17,14 +17,15 @@ class LoginViewController: UIViewController {
         let options = [
             "scheme": "skydemo"
         ]
-        SKYContainer.default().auth.loginOAuthProvider("google", options: options) { (record, error) in
-            guard record != nil && error == nil else {
+        SKYContainer.default().auth.loginOAuthProvider("google", options: options) { (user, error) in
+            guard user != nil && error == nil else {
                 print("Login Failed")
                 print(error.debugDescription)
                 return
             }
             print("Login Success")
-            print(record!.dictionary.debugDescription)
+            print("User:", user!.dictionary.debugDescription)
+            print("Access Token:", SKYContainer.default().auth.currentAccessToken!.tokenString)
         }
     }
 
