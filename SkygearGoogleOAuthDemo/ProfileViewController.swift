@@ -21,6 +21,21 @@ class ProfileViewController: UIViewController {
     var userProfile:JSON? = nil
     let keysToDisplay:[String] = ["id", "email", "verified_email", "locale"]
 
+    @objc func logout() {
+        SVProgressHUD.show()
+        UIApplication.shared.beginIgnoringInteractionEvents() // Avoid double click
+        SKYContainer.default().auth.logout { (user, error) in
+            SVProgressHUD.dismiss()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            guard error == nil else {
+                print("Logout Failed")
+                print(error.debugDescription)
+                return
+            }
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // UI Setup
@@ -30,7 +45,8 @@ class ProfileViewController: UIViewController {
         self.iconImageView.clipsToBounds = true
         self.iconImageView.sd_setShowActivityIndicatorView(true)
         self.tableView.tableFooterView = UIView(frame: .zero) // Hide bottom empty cells
-
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationItem.setRightBarButton(UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout)), animated: false)
         // Get Profile
         SVProgressHUD.show()
         SKYContainer.default().auth.getOAuthProviderProfiles(completionHandler: { (profile, error) in
@@ -49,6 +65,8 @@ class ProfileViewController: UIViewController {
             self.tableView.reloadData()
         })
     }
+
+
 
     /*
     // MARK: - Navigation
