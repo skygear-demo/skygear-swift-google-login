@@ -14,8 +14,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
 
     @IBAction func loginButtonPressed(_ sender: Any) {
-        let options = [
-            "scheme": "skydemo"
+        let options:[String:Any] = [
+            "scheme": "skydemo",
+            "scopes": ["email", "profile", "https://www.googleapis.com/auth/plus.login"]
         ]
         SKYContainer.default().auth.loginOAuthProvider("google", options: options) { (user, error) in
             guard user != nil && error == nil else {
