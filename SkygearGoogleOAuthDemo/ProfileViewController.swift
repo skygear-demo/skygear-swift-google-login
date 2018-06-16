@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import SKYKit
+import SwiftyJSON
+import SDWebImage
+import SVProgressHUD
 
 class ProfileViewController: UIViewController {
 
@@ -14,12 +18,37 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
+    var userProfile:JSON? = nil
+    let keysToDisplay:[String] = ["id", "email", "verified_email", "locale"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        // UI Setup
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.iconImageView.layer.cornerRadius = self.iconImageView.bounds.width / 2 // Round icon
+        self.iconImageView.clipsToBounds = true
+        self.iconImageView.sd_setShowActivityIndicatorView(true)
+        self.tableView.tableFooterView = UIView(frame: .zero) // Hide bottom empty cells
 
-        // Do any additional setup after loading the view.
+        // Get Profile
+        SVProgressHUD.show()
+        SKYContainer.default().auth.getOAuthProviderProfiles(completionHandler: { (profile, error) in
+            SVProgressHUD.dismiss()
+            guard profile != nil && error == nil else {
+                print("Failed Getting Profile")
+                print(error.debugDescription)
+                return
+            }
+            print("User Profile:", profile.debugDescription)
+            self.userProfile = JSON(profile as Any)
+            if let iconUrl = self.userProfile?["google"]["picture"].url {
+                self.iconImageView.sd_setImage(with: iconUrl, completed: nil)
+            }
+            self.nameLabel.text = self.userProfile?["google"]["name"].stringValue ?? "Empty"
+            self.tableView.reloadData()
+        })
     }
-    
 
     /*
     // MARK: - Navigation
@@ -30,5 +59,27 @@ class ProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+
+extension ProfileViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.keysToDisplay.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let key = self.keysToDisplay[indexPath.row]
+        cell.textLabel?.text = key
+        cell.detailTextLabel?.text = self.userProfile?["google"][key].stringValue ?? "Empty"
+        return cell
+    }
+}
+
+extension ProfileViewController: UITableViewDelegate {
 
 }

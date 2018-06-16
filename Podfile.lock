@@ -3,6 +3,9 @@ PODS:
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - MagicKit-Skygear (0.0.6)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
   - SKYKit (1.5.0):
     - SKYKit/Core (= 1.5.0)
     - SKYKit/ForgotPassword (= 1.5.0)
@@ -23,26 +26,37 @@ PODS:
   - SKYKitChat/Core (1.1.1):
     - SKYKit/Core (~> 1.1)
   - SocketRocket (0.5.1)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
+  - SDWebImage (~> 4.0)
   - SKYKit (~> 1.1)
   - SKYKitChat (~> 1.1)
+  - SVProgressHUD
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FMDB
     - MagicKit-Skygear
+    - SDWebImage
     - SKYKit
     - SKYKitChat
     - SocketRocket
+    - SVProgressHUD
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   MagicKit-Skygear: ca78735168eb8ae24be2307af462e632278bced0
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SKYKit: f1a50e43276ac9a78c43c7404406f35fadb1b467
   SKYKitChat: 5e9bca9c09c01a8ef941ac0f5b8da81ada3d8501
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 8b20fea130e45b330d14bf13780d2a988fb46308
+PODFILE CHECKSUM: 55c1633ec935b51ed36362ea806fc660d2e06a0a
 
 COCOAPODS: 1.5.3
