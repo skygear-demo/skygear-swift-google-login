@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		D9565FBF20D5244800C4EF26 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9565FBE20D5244800C4EF26 /* LoginViewController.swift */; };
+		D9565FC120D52F3F00C4EF26 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9565FC020D52F3F00C4EF26 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		9B1E82B96C81EE2393469CFB /* Pods-SkygearGoogleOAuthDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkygearGoogleOAuthDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkygearGoogleOAuthDemo/Pods-SkygearGoogleOAuthDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D9565FBE20D5244800C4EF26 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D9565FC020D52F3F00C4EF26 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E71CF77613DC4FA5954D067D /* Pods-SkygearGoogleOAuthDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkygearGoogleOAuthDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkygearGoogleOAuthDemo/Pods-SkygearGoogleOAuthDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				D9565FBE20D5244800C4EF26 /* LoginViewController.swift */,
+				D9565FC020D52F3F00C4EF26 /* ProfileViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9565FC120D52F3F00C4EF26 /* ProfileViewController.swift in Sources */,
 				D9565FBF20D5244800C4EF26 /* LoginViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
