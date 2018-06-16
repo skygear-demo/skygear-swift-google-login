@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Login-->
         <scene sceneID="NzK-Jv-vu9">
             <objects>
                 <viewController id="Eal-zN-wxz" customClass="LoginViewController" customModule="SkygearGoogleOAuthDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                             <constraint firstItem="eLm-Dx-V20" firstAttribute="centerY" secondItem="3yZ-lK-ouL" secondAttribute="centerY" id="Z1C-QW-xMf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TCV-aa-Z4e"/>
+                    <navigationItem key="navigationItem" title="Login" id="TCV-aa-Z4e"/>
                     <connections>
                         <outlet property="loginButton" destination="eLm-Dx-V20" id="nvt-Wq-A79"/>
                         <segue destination="nXm-iI-rw0" kind="show" identifier="profile" id="XL3-WJ-bPW"/>
@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="791.20000000000005" y="182.15892053973016"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="bOk-ta-cgT">
             <objects>
-                <viewController id="nXm-iI-rw0" customClass="ProfileViewController" customModule="SkygearGoogleOAuthDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Profile" id="nXm-iI-rw0" customClass="ProfileViewController" customModule="SkygearGoogleOAuthDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NWB-w0-av8"/>
                         <viewControllerLayoutGuide type="bottom" id="bt1-WR-lFX"/>
