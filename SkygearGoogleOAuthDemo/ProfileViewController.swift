@@ -19,7 +19,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var userProfile:JSON? = nil
-    let keysToDisplay:[String] = ["id", "email", "verified_email", "locale"]
 
     @objc func logout() {
         SVProgressHUD.show()
@@ -57,11 +56,11 @@ class ProfileViewController: UIViewController {
                 return
             }
             print("User Profile:", profile.debugDescription)
-            self.userProfile = JSON(profile as Any)
-            if let iconUrl = self.userProfile?["google"]["picture"].url {
+            self.userProfile = JSON(profile as Any)["google"]
+            if let iconUrl = self.userProfile?["picture"].url {
                 self.iconImageView.sd_setImage(with: iconUrl, completed: nil)
             }
-            self.nameLabel.text = self.userProfile?["google"]["name"].stringValue ?? "Empty"
+            self.nameLabel.text = self.userProfile?["name"].stringValue
             self.tableView.reloadData()
         })
     }
@@ -86,15 +85,19 @@ extension ProfileViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.keysToDisplay.count
+        return self.userProfile?.dictionary?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let key = self.keysToDisplay[indexPath.row]
+        let key = Array(self.userProfile!.dictionary!.keys)[indexPath.row]
         cell.textLabel?.text = key
-        cell.detailTextLabel?.text = self.userProfile?["google"][key].stringValue ?? "Empty"
+        cell.detailTextLabel?.text = self.userProfile?[key].stringValue
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Google Profile"
     }
 }
 
