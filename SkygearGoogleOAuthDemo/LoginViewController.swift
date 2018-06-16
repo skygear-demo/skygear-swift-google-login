@@ -32,9 +32,9 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-        // Do any additional setup after loading the view.
+        if SKYContainer.default().auth.currentUser != nil {
+            self.performSegue(withIdentifier: "profile", sender: self)
+        }
     }
     
 
