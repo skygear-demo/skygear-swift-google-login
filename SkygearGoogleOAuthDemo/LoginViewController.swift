@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
             print("Login Success")
             print("User:", user!.dictionary.debugDescription)
             print("Access Token:", SKYContainer.default().auth.currentAccessToken!.tokenString)
+            self.performSegue(withIdentifier: "profile", sender: self)
         }
     }
 
