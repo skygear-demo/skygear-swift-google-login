@@ -7,13 +7,25 @@
 //
 
 import UIKit
+import SKYKit
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
 
     @IBAction func loginButtonPressed(_ sender: Any) {
-
+        let options = [
+            "scheme": "skydemo"
+        ]
+        SKYContainer.default().auth.loginOAuthProvider("google", options: options) { (record, error) in
+            guard record != nil && error == nil else {
+                print("Login Failed")
+                print(error.debugDescription)
+                return
+            }
+            print("Login Success")
+            print(record!.dictionary.debugDescription)
+        }
     }
 
     override func viewDidLoad() {
