@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lr8-Zt-g3E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lr8-Zt-g3E">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -119,7 +120,7 @@
                         <constraints>
                             <constraint firstItem="GgZ-B0-u08" firstAttribute="leading" secondItem="4UC-dz-QDV" secondAttribute="leading" id="TuA-2H-pgS"/>
                             <constraint firstItem="GgZ-B0-u08" firstAttribute="top" secondItem="4UC-dz-QDV" secondAttribute="top" id="lXZ-wO-WKS"/>
-                            <constraint firstItem="bt1-WR-lFX" firstAttribute="top" secondItem="GgZ-B0-u08" secondAttribute="bottom" id="la8-aP-fI2"/>
+                            <constraint firstAttribute="bottom" secondItem="GgZ-B0-u08" secondAttribute="bottom" id="la8-aP-fI2"/>
                             <constraint firstAttribute="trailing" secondItem="GgZ-B0-u08" secondAttribute="trailing" id="tBN-sE-eHb"/>
                         </constraints>
                     </view>
