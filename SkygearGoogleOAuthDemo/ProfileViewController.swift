@@ -39,7 +39,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         // UI Setup
         self.tableView.dataSource = self
-        self.tableView.delegate = self
         self.iconImageView.layer.cornerRadius = self.iconImageView.bounds.width / 2 // Round icon
         self.iconImageView.clipsToBounds = true
         self.iconImageView.sd_setShowActivityIndicatorView(true)
@@ -64,19 +63,6 @@ class ProfileViewController: UIViewController {
             self.tableView.reloadData()
         })
     }
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ProfileViewController: UITableViewDataSource {
@@ -99,8 +85,4 @@ extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Google Profile"
     }
-}
-
-extension ProfileViewController: UITableViewDelegate {
-
 }
