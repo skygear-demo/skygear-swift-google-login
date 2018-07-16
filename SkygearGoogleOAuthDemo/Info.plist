@@ -26,7 +26,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.chihimng.SkygearGoogleOAuthDemo</string>
+			<string>com.oursky.SkygearGoogleOAuthDemo</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>skydemo</string>
